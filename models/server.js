@@ -13,7 +13,7 @@ class Server {
     constructor() {
 
         this.app  = express();
-        this.port = process.env.PORT;
+        this.url = process.env.URL;
 
         // Conectar a DB
         dbConnection();
@@ -54,8 +54,8 @@ class Server {
         this.configurarSockets();
 
         // Inicializar Server
-        this.server.listen( this.port, () => {
-            console.log('Server corriendo en puerto:', this.port );
+        this.server.listen( this.url, () => {
+            console.log('Server corriendo en puerto:', this.url );
         });
     }
 
